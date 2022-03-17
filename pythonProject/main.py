@@ -38,7 +38,6 @@ class Field(object):
                     continue
                 print(" " + str(field[x][y]), end='')
             print("")
-    print("")
 
     def CheckShipFits(self, ship, element):
         field = self.GetFieldPart(element)
