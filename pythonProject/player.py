@@ -47,7 +47,7 @@ class Player(object):
                     int(y) not in range(1, game_session.Game_session.field_size + 1) or rotation not in ("H", "V"):
                 self.message.append('Приказ непонятен, ошибка формата данных')
                 return [0, 0, 0]
-            return game_session.Game_session.letters.index(x), int(y) - 1, 0 if rotation == 'H' else 1
+            return game_session.Game_session.letters.index(x), int(y) - 1, state.Rotation.HORIZONTAL if rotation == 'H' else state.Rotation.VERTICAL
         if input_type == state.Input.SHOT:
             user_input = input().upper().replace(" ", "")
             x, y = user_input[0].upper(), user_input[1:]

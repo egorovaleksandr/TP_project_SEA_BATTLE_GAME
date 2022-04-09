@@ -18,6 +18,11 @@ class Result(Enum):
     KILL = 3
 
 
+class Rotation(Enum):
+    HORIZONTAL = 1
+    VERTICAL = 2
+
+
 class State:
     def MakeAMove(game):
         return

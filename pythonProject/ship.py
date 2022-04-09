@@ -1,4 +1,5 @@
 import cell
+import state
 
 
 class Ship:
@@ -7,8 +8,6 @@ class Ship:
         self.hp = self.size
         self.x = x
         self.y = y
-        self.height = 1
-        self.width = self.size
         self.rotation = rotation
         self.SetRotation(rotation)
 
@@ -22,5 +21,6 @@ class Ship:
 
     def SetRotation(self, rotation):
         self.rotation = rotation
-        if self.rotation != 0:
-            self.width, self.height = self.height, self.width
+        self.width, self.height = self.size, 1
+        if self.rotation == state.Rotation.VERTICAL:
+            self.height, self.width = self.width, self.height
